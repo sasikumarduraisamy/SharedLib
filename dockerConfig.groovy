@@ -7,7 +7,7 @@ def call(Map buildconfig) {
 	cleanWs() //clean workspace before build trigger
 	sh "mkdir $dockerPath"
   print $dockerPath
-	sharedLibRepoName = buildconfig.repoName == null ? 'Testing' : buildconfig.sharedLibRepo	
+	sharedLibRepoName = buildconfig.sharedLibRepo == null ? 'Testing' : buildconfig.sharedLibRepo	
   print "sharedLibRepoName is" $sharedLibRepoName
 	//folderExists = fileExists "$dockerPath/Scripts"
 	//baseFolder = folderExists == true ? 'Scripts' : 'scripts'
